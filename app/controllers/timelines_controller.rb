@@ -10,6 +10,7 @@ class TimelinesController < ApplicationController
   # GET /timelines/1
   # GET /timelines/1.json
   def show
+    @events = Event.where(timeline_id: @timeline.id)
   end
 
   # GET /timelines/new

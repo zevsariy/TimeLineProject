@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Авторы</h1>
 
-<table>
+<table class="table table-primary">
   <thead>
     <tr>
-      <th>Login</th>
-      <th>Password</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Middle name</th>
-      <th>Birthdate</th>
+      <th>Логин</th>
+      <th>Пароль</th>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>Отчество</th>
+      <th>Дата рождения</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +24,9 @@
         <td><%= user.last_name %></td>
         <td><%= user.middle_name %></td>
         <td><%= user.birthdate %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показать', user %></td>
+        <td><%= link_to 'Изменить', edit_user_path(user) %></td>
+        <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Создать нового автора', new_user_path %>

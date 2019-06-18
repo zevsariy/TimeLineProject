@@ -1,19 +1,55 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Заголовок:</strong>
   <%= @timeline.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Описание:</strong>
   <%= @timeline.description %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Автор:</strong>
   <%= @timeline.user %>
 </p>
 
-<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
-<%= link_to 'Back', timelines_path %>
+<%= link_to 'Изменить', edit_timeline_path(@timeline) %> |
+<%= link_to 'Назад', timelines_path %>
+
+<div class="qa-message-list" id="wallmessages">
+<% @events.each do |event| %>
+<div class="message-item" id="m16">
+						<div class="message-inner">
+							<div class="message-head clearfix">
+								<div class="avatar pull-left">
+
+                <% if event.event_type == 1 %>
+                  <img src="https://tasvel.ru/wp-content/uploads/Ikonka-MTS.png">
+                <% else %> 
+                  <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                <% end %>
+
+                </div>
+								<div class="user-detail">
+									<h5 class="handle"><%= event.title %></h5>
+									<div class="post-meta">
+										<div class="asker-meta">
+											<span class="qa-message-what"></span>
+											<span class="qa-message-when">
+												<span class="qa-message-when-data"><%= event.create_datetime %></span>
+											</span>
+											<span class="qa-message-who">
+												<span class="qa-message-who-pad">by </span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="qa-message-content">
+								<%= event.description %>
+							</div>
+					</div></div>
+    <% end %>	
+</div>

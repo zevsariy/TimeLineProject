@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Заголовок:</strong>
   <%= @event.title %>
 </p>
 
 <p>
-  <strong>Create datetime:</strong>
+  <strong>Дата события:</strong>
   <%= @event.create_datetime %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Описание:</strong>
   <%= @event.description %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @event.type %>
+  <strong>Тип:</strong>
+  <%= @event.event_type %>
 </p>
 
 <p>
-  <strong>Timeline:</strong>
+  <strong>Линия времени:</strong>
   <%= @event.timeline %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Изменить', edit_event_path(@event) %> |
+<%= link_to 'Назад', events_path %>

@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>События</h1>
 
-<table>
+<table class="table table-primary">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Create datetime</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Timeline</th>
+      <th>Заголовок</th>
+      <th>Дата события</th>
+      <th>Описание</th>
+      <th>Тип</th>
+      <th>Линия времени</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,11 +20,11 @@
         <td><%= event.title %></td>
         <td><%= event.create_datetime %></td>
         <td><%= event.description %></td>
-        <td><%= event.type %></td>
-        <td><%= event.timeline %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= event.event_type %></td>
+        <td><%= event.timeline.title %></td>
+        <td><%= link_to 'Показать', event %></td>
+        <td><%= link_to 'Изменить', edit_event_path(event) %></td>
+        <td><%= link_to 'Удалить', event, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Новое событие', new_event_path %>

@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    Заголовок
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :create_datetime %>
+    Дата события
     <%= form.datetime_select :create_datetime %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    Описание
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
+    Тип
+    <%= form.text_field :event_type %>
   </div>
 
   <div class="field">
-    <%= form.label :timeline_id %>
+    Линия времени
     <%= form.text_field :timeline_id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Отправить"%>
   </div>
 <% end %>

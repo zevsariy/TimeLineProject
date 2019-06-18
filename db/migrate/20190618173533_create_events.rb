@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :title
       t.datetime :create_datetime
       t.text :description
-      t.numeric :type
+      t.numeric :event_type
       t.references :timeline, foreign_key: true
 
       t.timestamps

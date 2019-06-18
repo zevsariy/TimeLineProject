@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_173533) do
+ActiveRecord::Schema.define(version: 2019_06_18_174955) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.datetime "create_datetime"
     t.text "description"
-    t.decimal "type", precision: 10
+    t.decimal "event_type", precision: 10
     t.bigint "timeline_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["timeline_id"], name: "index_events_on_timeline_id"
+  end
+
+  create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "keywords"
+    t.text "description"
+    t.text "content"
+    t.date "create_datetime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "timelines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
