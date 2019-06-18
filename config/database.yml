@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: app_user
+  password: 12345678
   host: localhost
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: TimeLineProject_production
-  username: TimeLineProject
+  username: app
   password: <%= ENV['TIMELINEPROJECT_DATABASE_PASSWORD'] %>
