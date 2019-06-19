@@ -27,21 +27,25 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
-          </li>
-          <% if current_user %>
+          <% menu_pages.each do |menu_page| %>
+            <li class="nav-item active">
+              <%= link_to menu_page.title, menu_page, :class=>"nav-link" %>
+            </li>
+          <% end %>
+          <% if current_user&.role == 113 %>
           <li class="nav-item active">
             <a class="nav-link" href="/pages">Страницы <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/users">Авторы <span class="sr-only">(current)</span></a>
+          </li>
+          <% end %>
+          <% if current_user %>
           <li class="nav-item active">
             <a class="nav-link" href="/timelines">Линии времени <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/events">События <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/users">Авторы <span class="sr-only">(current)</span></a>
           </li>
           <% end %>
         </ul>

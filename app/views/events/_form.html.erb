@@ -33,7 +33,7 @@
 
   <div class="field">
     Линия времени
-    <%= form.text_field :timeline_id %>
+    <%= form.collection_select :timeline_id, @timelines, :id, :title %>
   </div>
 
   <div class="actions">

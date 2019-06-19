@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    Заголовок
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :keywords %>
+    Ключевые слова
     <%= form.text_field :keywords %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    Описание
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    Контент
     <textarea id="page_content" name="page[content]">
       <%= page.content %>
     </textarea>
@@ -37,11 +37,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :create_datetime %>
+    Дата создания
     <%= form.date_select :create_datetime %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Отправить" %>
   </div>
 <% end %>

@@ -7,4 +7,6 @@
 <p>
   <%= @page.create_datetime %>
 </p>
+<% if current_user&.role == 113 %>
 <%= link_to 'Изменить', edit_page_path(@page) %>
+<% end %>

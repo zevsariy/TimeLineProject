@@ -12,14 +12,11 @@
 
 <p>
   <strong>Автор:</strong>
-  <%= @timeline.user %>
+  <%= @timeline.user.login %>
 </p>
 
-<%= link_to 'Изменить', edit_timeline_path(@timeline) %> |
-<%= link_to 'Назад', timelines_path %>
-
 <div class="qa-message-list" id="wallmessages">
-<% @events.each do |event| %>
+<% @events.sort_by(&:create_datetime).each do |event| %>
 <div class="message-item" id="m16">
 						<div class="message-inner">
 							<div class="message-head clearfix">
@@ -50,6 +47,7 @@
 							<div class="qa-message-content">
 								<%= event.description %>
 							</div>
+							<div><%= link_to 'Изменить', edit_event_path(event) %></div>
 					</div></div>
     <% end %>	
 </div>

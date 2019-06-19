@@ -15,10 +15,12 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @timelines = Timeline.where(user_id: current_user.id)
   end
 
   # GET /events/1/edit
   def edit
+    @timelines = Timeline.where(user_id: current_user.id)
   end
 
   # POST /events
@@ -69,6 +71,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :create_datetime, :description, :type, :timeline_id)
+      params.require(:event).permit(:title, :create_datetime, :description, :event_type, :timeline_id)
     end
 end
