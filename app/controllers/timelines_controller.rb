@@ -4,7 +4,15 @@ class TimelinesController < ApplicationController
   # GET /timelines
   # GET /timelines.json
   def index
-    @timelines = Timeline.all
+    if current_user
+      if current_user.id == 1
+        @timelines = Timeline.all
+      else
+        @timelines = Timeline.where(user_id: current_user.id)
+      end
+    else
+      @timelines = Timeline.all
+    end
   end
 
   # GET /timelines/1
@@ -26,10 +34,11 @@ class TimelinesController < ApplicationController
   # POST /timelines.json
   def create
     @timeline = Timeline.new(timeline_params)
+    @timeline.user_id = current_user.id
 
     respond_to do |format|
       if @timeline.save
-        format.html { redirect_to @timeline, notice: 'Timeline was successfully created.' }
+        format.html { redirect_to @timeline, notice: 'Линия времени успешно создана.' }
         format.json { render :show, status: :created, location: @timeline }
       else
         format.html { render :new }

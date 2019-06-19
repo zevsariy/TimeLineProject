@@ -30,6 +30,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
           </li>
+          <% if current_user %>
           <li class="nav-item active">
             <a class="nav-link" href="/pages">Страницы <span class="sr-only">(current)</span></a>
           </li>
@@ -41,6 +42,18 @@
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/users">Авторы <span class="sr-only">(current)</span></a>
+          </li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item active text-white">
+          <% if current_user %>
+            <p>Добро пожаловать <%= current_user.login %> </p>
+            <%= link_to "Выйти", logout_path %>
+          <% else %>
+            <%= link_to "Зарегистрироваться", signup_path %> или 
+            <%= link_to "Войти", login_path %>
+          <% end %>
           </li>
         </ul>
       </div>
