@@ -24,9 +24,9 @@
         <td><%= user.last_name %></td>
         <td><%= user.middle_name %></td>
         <td><%= user.birthdate %></td>
-        <td><%= link_to 'Показать', user %></td>
-        <td><%= link_to 'Изменить', edit_user_path(user) %></td>
-        <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%= link_to '<i class="fa fa-search"></i>'.html_safe, user %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_page_path(user) %></td>
+        <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>

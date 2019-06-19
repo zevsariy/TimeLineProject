@@ -22,9 +22,9 @@
         <td><%= event.description %></td>
         <td><%= event.event_type %></td>
         <td><%= event.timeline.title %></td>
-        <td><%= link_to 'Показать', event %></td>
-        <td><%= link_to 'Изменить', edit_event_path(event) %></td>
-        <td><%= link_to 'Удалить', event, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%= link_to '<i class="fa fa-search"></i>'.html_safe, event %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_page_path(event) %></td>
+        <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, event, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
