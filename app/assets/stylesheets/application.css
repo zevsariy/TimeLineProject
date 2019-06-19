@@ -13,6 +13,33 @@
  *= require_tree .
  *= require_self
  */
+a
+{
+   color: #000000e5 !important;
+   font-size: 18px;
+   -moz-text-shadow:0 0 5px #005fad; 
+   -webkit-text-shadow:0 0 5px #005fad; 
+   text-shadow:0 0 5px #005fad;
+}
+
+a:hover
+{
+   color: #ffe786!important;
+   background-color: transparent !important;
+}
+
+ html,body{
+   background-image: url('https://cdn.steemitimages.com/DQmef2XRzJyp5w196qtmMNDoNusBajgrXkJRxPRW5W2EEXq/time-3222267_1920.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100%;
+   font-family: 'Numans', sans-serif;
+   }
+
+.container{
+   background-color: #ddd;
+   border-radius: 10px; 
+}
 
  .message-item {
     margin-bottom: 25px;

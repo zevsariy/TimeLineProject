@@ -11,37 +11,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :login %>
-    <%= form.text_field :login %>
-  </div>
+<div class="d-flex justify-content-center h-100">
+<div class="card">
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Логин</span>
+						</div>
+            <%= form.text_field :login %>
+					</div>
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Пароль</span>
+						</div>
+            <%= form.text_field :password %>
+					</div>
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Фамилия</span>
+						</div>
+            <%= form.text_field :last_name %>
+					</div>
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Имя</span>
+						</div>
+            <%= form.text_field :first_name %>
+					</div>
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Отчество</span>
+						</div>
+            <%= form.text_field :middle_name %>
+					</div>
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Дата рождения</span>
+						</div>
+            <%= form.date_select :birthdate, :start_year=>Date.today.year - 100,:end_year=>Date.today.year %>
+					</div>
+					<div class="form-group">
+             <%= form.submit "Отправить" %>
+					</div>
+				</form>
+			</div>
+		</div>
+    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :middle_name %>
-    <%= form.text_field :middle_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.date_select :birthdate %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Отправить" %>
-  </div>
-<% end %>
+    <% end %>

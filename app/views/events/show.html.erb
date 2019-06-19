@@ -25,5 +25,6 @@
   <%= @event.timeline.title %>
 </p>
 
+<%= link_to 'Новое событие', new_event_path %>
 <%= link_to 'Изменить', edit_event_path(@event) %> |
 <%= link_to 'Назад', events_path %>

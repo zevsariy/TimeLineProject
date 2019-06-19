@@ -18,7 +18,7 @@
 
   <div class="field">
     Дата события
-    <%= form.datetime_select :create_datetime %>
+    <%= form.datetime_select :create_datetime, :start_year=>Date.today.year - 100,:end_year=>Date.today.year %>
   </div>
 
   <div class="field">

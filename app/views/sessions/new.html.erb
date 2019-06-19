@@ -1,15 +1,37 @@
 <p id="alert"><%= alert %></p>
-<h1>Авторизация</h1>
 <%= form_tag sessions_path do |form| %>
-  <div class="field">
-    <%= label_tag :login %>
-    <%= text_field_tag :login %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Войти" %>
-  </div>
-<% end %>
+<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Авторизация</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<a href="https://vk.com/tkachenko_s_y"><span><i class="fa fa-vk"></i></span></a>
+				</div>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-user"></i></span>
+						</div>
+						<%= text_field_tag :login %>
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-key"></i></span>
+						</div>
+						<%= password_field_tag :password %>
+					</div>
+					<div class="form-group">
+             <%= submit_tag "Войти" %>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Еще не с нами? <a href="/signup"> Зарегистрироваться</a>
+				</div>
+			</div>
+		</div>
+	</div>
+  <% end %>
